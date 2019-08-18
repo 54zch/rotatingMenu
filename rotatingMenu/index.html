@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>shoppingmall</title>
+    <script type="text/javascript" src="js/rotatingMenu-min.js"></script>
+    <link rel="stylesheet" href="css/rotatingMenu.css">
+  </head>
+  <style>
+        .box{
+            width: 100%;
+            height: 219px;
+            padding-top: 273px;
+        }
+
+        /* 以下是每个模块的样式 */
+        .rotation-item span{
+            position: absolute;
+            z-index: 10;
+        }
+        .textnone{
+            display: none;
+        }
+        .customMod{
+            width: 500px;
+            text-align: center;
+            margin: 50px auto;
+            position: relative;
+            top: 50px;
+            transition: all 0.5s;
+            -moz-transition: all 0.5s;	/* Firefox 4 */
+            -webkit-transition: all 0.5s;	/* Safari 和 Chrome */
+            -o-transition: all 0.5s;
+        }
+        .customModanmt{
+            top: 0;
+        }
+  </style>
+  <body>
+        <div class="box">
+            <div class="circleCenter" id="circlecenter">
+                <div class="bgBox">
+                    <img src="img/bg.jpg"/>
+                </div>
+                <div class='rotation-turn'>
+                    <div class='rotation-item'>
+                        <div class="rotation-animat">
+                            <img src="img/img1.png"/>
+                        </div>
+                    </div>
+                </div>
+                <div class='rotation-turn'>
+                    <div class='rotation-item'>
+                        <div class="rotation-animat">
+                            <img src="img/img2.png"/>
+                        </div>
+                    </div>
+                </div>
+                <div class='rotation-turn'>
+                    <div class='rotation-item'>
+                        <div class="rotation-animat">
+                            <img src="img/img3.png"/>
+                        </div>
+                    </div>
+                </div>
+                <div class='rotation-turn'>
+                    <div class='rotation-item'>
+                        <div class="rotation-animat">
+                            <img src="img/img4.png"/>
+                        </div>
+                    </div>
+                </div>
+                <div class='rotation-turn'>
+                    <div class='rotation-item'>
+                        <div class="rotation-animat">
+                            <img src="img/img5.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="customMod" class="customMod customModanmt">
+            <p id="textBox">有害垃圾指废电池、废灯管、废药品、废油漆及其容器等对人体健康或者自然环境造成直接或者潜在危害的生活废弃物。常见包括废电池、废荧光灯管、废灯泡、废水银温度计、废油漆桶、过期药品等。有害有毒垃圾需特殊正确的方法安全处理。</p>
+        </div>
+  </body>
+  <script>
+
+        var textAry = [
+            '干垃圾包括废弃的纸张、塑料、玻璃、 金属、织物等，还包括报废车辆、家电家具、装修废弃物等大型的垃圾。',
+            '湿垃圾就是有机垃圾，指日常生活垃圾中可分解的有机物质部分，包括食物残渣、菜根、菜叶，动物蹄、角、瓜皮、果屑、蛋壳、鱼鳞、蛋壳、毛发、植物枝干、树叶、杂草、动物尸体、牲畜粪便等。',
+            '可回收物就是可以再生循环的垃圾。本身或材质可再利用的纸类、硬纸板、玻璃、塑料、金属、塑料包装，与这些材质有关的如：报纸、杂志、广告单及其它干净的纸类等皆可回收。',
+            '厨余垃圾是指居民日常生活及食品加工、饮食服务、单位供餐等活动中产生的垃圾，包括丢弃不用的菜叶、剩菜、剩饭、果皮、蛋壳、茶渣、骨头等，其主要来源为家庭厨房、餐厅、饭店、食堂、市场及其他与食品加工有关的行业',
+            '有害垃圾指废电池、废灯管、废药品、废油漆及其容器等对人体健康或者自然环境造成直接或者潜在危害的生活废弃物。常见包括废电池、废荧光灯管、废灯泡、废水银温度计、废油漆桶、过期药品等。有害有毒垃圾需特殊正确的方法安全处理。'
+        ];
+        var option = {
+            radius:200,      //大圆半径
+            focusindex:5,  //焦点图位置
+            speed:800,       //旋转速率，单位（毫秒）
+            callback:function(ele,index){   //this指向此rotation对象
+
+                var objE = document.getElementById('textBox'),
+                    objBox = document.getElementById('customMod');
+　　                objE.innerHTML = textAry[index-1];
+                    objBox.className = 'customMod'
+                    window.setTimeout(function(){
+                        objBox.className += ' customModanmt'
+                    },200)
+
+            }
+        }
+        var rotation = new Rotation("circlecenter",option);
+
+  </script>
+</html>

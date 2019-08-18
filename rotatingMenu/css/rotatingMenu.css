@@ -1,0 +1,57 @@
+.circleCenter{
+    width: 1px;
+    height: 1px;
+    position: relative;
+    margin: 0 auto;
+    background: rgba(0,0,0, 0);
+}
+.bgBox{
+    position: relative;
+}
+.bgBox img{
+    width: 100%;
+    height: auto;
+}
+.rotation-turn{
+    position: absolute;
+    margin: 0 auto;
+    transform:rotate(0deg);
+    -ms-transform:rotate(0); 	/* IE 9 */
+    -moz-transform:rotate(0); 	/* Firefox */
+    -webkit-transform:rotate(0); /* Safari 和 Chrome */
+    -o-transform:rotate(0);
+    transition: all 1s;
+    -moz-transition: all 1s;	/* Firefox 4 */
+    -webkit-transition: all 1s;	/* Safari 和 Chrome */
+    -o-transition: all 1s;
+}
+.rotation-item{
+    width: 100%;
+    transform:rotate(0);
+    -ms-transform:rotate(0); 	/* IE 9 */
+    -moz-transform:rotate(0); 	/* Firefox */
+    -webkit-transform:rotate(0); /* Safari 和 Chrome */
+    -o-transform:rotate(0);
+    transition: all 1s;
+    -moz-transition: all 1s;	/* Firefox 4 */
+    -webkit-transition: all 1s;	/* Safari 和 Chrome */
+    -o-transition: all 1s;
+}
+.rotation-item .rotation-animat {
+    width: 150px;
+    height: 150px;
+}
+.rotation-item .rotation-animat>img{
+    width: 100%;
+    height: auto;
+}
+.rotation-item .rotation-animat{
+    transform:scale(1,1);
+    transition: all 1s;
+    -moz-transition: all 1s;	/* Firefox 4 */
+    -webkit-transition: all 1s;	/* Safari 和 Chrome */
+    -o-transition: all 1s;
+}
+.rotation-turn.rotation-active .rotation-item .rotation-animat{
+    transform:scale(1.3, 1.3);
+}
